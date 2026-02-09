@@ -5,5 +5,5 @@ An AI app that analyzes the full lecture of a teacher. In third world countries 
 - [x] Set up deepgram 
 - [x] Transcribe an audio file and print it
 - [x] Make the audio output into a txt file
-- [ ] Give openai to read the txt file and evaluate it
+- [x] Give openai to read the txt file and evaluate it
 - [ ] Setup prompts to give a structured reply
