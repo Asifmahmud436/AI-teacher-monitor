@@ -6,7 +6,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 file = client.files.create(
-    file=open("response.pdf", "rb"),
+    file=open("4e215f0a-95fa-45cc-bec3-0fe387b8856d.pdf", "rb"),
     purpose="user_data"
 )
 

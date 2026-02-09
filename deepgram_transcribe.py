@@ -1,11 +1,12 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
+import uuid
 from deepgram import (
     DeepgramClient,
 )
 DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
-AUDIO_FILE = 'khutbah_eng.mp3'
+AUDIO_FILE = 'khutbah_bn.mp3'
 
 def transcribe():
     try:
@@ -15,11 +16,14 @@ def transcribe():
                 request=audio_file.read(),
                 model="nova-3",
                 smart_format=True,
-                punctuate=True
+                punctuate=True,
+                language="bn"
             )
-            result = response.results.channels[0].alternatives[0].transcript
 
-        with open("response.txt","w",encoding="utf-8", newline='\n') as file:
+        result = response.results.channels[0].alternatives[0].transcript
+        name = uuid.uuid4()
+        print(result)
+        with open(f"{name}.txt","w",encoding="utf-8", newline='\n') as file:
             file.write(result)
         return
 
