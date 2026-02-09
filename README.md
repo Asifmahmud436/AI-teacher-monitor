@@ -6,4 +6,6 @@ An AI app that analyzes the full lecture of a teacher. In third world countries 
 - [x] Transcribe an audio file and print it
 - [x] Make the audio output into a txt file
 - [x] Give openai to read the txt file and evaluate it
-- [ ] Setup prompts to give a structured reply
+- [x] Setup prompts to give a structured reply
+- [ ] Figure out a way to give an audio and get a feedback for it(abstraction)
+- [ ] Clean up all the function and write a new .py file to connect all of them
