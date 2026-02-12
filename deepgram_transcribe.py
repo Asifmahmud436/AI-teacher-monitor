@@ -8,16 +8,16 @@ from deepgram import (
 DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
 AUDIO_FILE = 'khutbah_bn.mp3'
 
-def transcribe():
+def transcribe(audio_file, input_language='en'):
     try:
         deepgram = DeepgramClient(api_key=DEEPGRAM_API_KEY)
-        with open(AUDIO_FILE, "rb") as audio_file:
+        with open(audio_file, "rb") as audio_file:
             response = deepgram.listen.v1.media.transcribe_file(
                 request=audio_file.read(),
                 model="nova-3",
                 smart_format=True,
                 punctuate=True,
-                language="bn"
+                language=input_language
             )
 
         result = response.results.channels[0].alternatives[0].transcript
@@ -31,4 +31,21 @@ def transcribe():
         print(f"Exception: {e}")
 
 
-transcribe()
+# try:
+#     deepgram = DeepgramClient(api_key=DEEPGRAM_API_KEY)
+#     with open(AUDIO_FILE, "rb") as audio_file:
+#             response = deepgram.listen.v1.media.transcribe_file(
+#                 request=audio_file.read(),
+#                 model="nova-3",
+#                 smart_format=True,
+#                 punctuate=True,
+#                 language="bn"
+#             )
+
+#     result = response.results.channels[0].alternatives[0].transcript
+#     name = uuid.uuid4()
+#     print(result)
+#     with open(f"{name}.txt","w",encoding="utf-8", newline='\n') as file:
+#         file.write(result)
+# except Exception as e:
+#     print(f"Exception: {e}")

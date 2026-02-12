@@ -9,3 +9,5 @@ An AI app that analyzes the full lecture of a teacher. In third world countries 
 - [x] Setup prompts to give a structured reply
 - [ ] Figure out a way to give an audio and get a feedback for it(abstraction)
 - [ ] Clean up all the function and write a new .py file to connect all of them
+- [ ] Make a /post api to post classroom audio
+- [ ] Make a /get api to get teachers audio
