@@ -8,7 +8,7 @@ from .constants import Prompt
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-def summarizer(pdf_file):
+def ai_summarizer(pdf_file):
     file = client.files.create(
         file=open(pdf_file, "rb"),
         purpose="user_data"

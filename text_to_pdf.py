@@ -15,6 +15,7 @@ def pdfier(text_file):
         pdf.output(filename)
         print(f"PDF saved as: {filename}")
 
+    return pdf
 
 # Initialize PDF
 # from fpdf import FPDF
